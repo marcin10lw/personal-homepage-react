@@ -1,0 +1,42 @@
+@use './colors.scss' as *;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  color: $white;
+  background-color: $black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+fieldset {
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
