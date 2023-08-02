@@ -1,0 +1,13 @@
+@use '../../sass/style.scss' as *;
+
+.linksList {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.linksList__icon {
+  @include hover(color);
+  display: block;
+  color: $white;
+}

@@ -1,0 +1,22 @@
+.headerWrapper {
+  position: absolute;
+  width: 100%;
+  top: 38px;
+  padding-inline: 30px;
+}
+
+.header {
+  max-width: 1110px;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  strong {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.444px;
+  }
+}

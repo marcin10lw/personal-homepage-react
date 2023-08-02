@@ -1,0 +1,8 @@
+@use '../globals/colors.scss' as *;
+
+@mixin hover($property) {
+  transition: $property 200ms ease-in-out;
+  &:hover {
+    #{$property}: $green;
+  }
+}

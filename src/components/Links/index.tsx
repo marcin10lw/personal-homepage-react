@@ -8,17 +8,17 @@ const Links = () => {
     <ul className={styles.linksList}>
       <li>
         <a href="https://github.com/marcin10lw" target="_blank" rel="noopener noreferrer">
-          <GithubIcon />
+          <GithubIcon className={styles.linksList__icon} />
         </a>
       </li>
       <li>
         <a href="https://www.frontendmentor.io/profile/marcin10lw" target="_blank" rel="noopener noreferrer">
-          <FrontendMentorIcon />
+          <FrontendMentorIcon className={styles.linksList__icon} />
         </a>
       </li>
       <li>
         <a href="https://www.linkedin.com/in/marcin-augun-951659266/" target="_blank" rel="noopener noreferrer">
-          <LinkedinIcon />
+          <LinkedinIcon className={styles.linksList__icon} />
         </a>
       </li>
     </ul>
