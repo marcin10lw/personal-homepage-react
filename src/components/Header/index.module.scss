@@ -1,8 +1,18 @@
+@use '../../sass/style.scss' as *;
+
 .headerWrapper {
   position: absolute;
   width: 100%;
   top: 38px;
   padding-inline: 30px;
+
+  @include breakpoint-down(tablet) {
+    top: 30px;
+  }
+
+  @include breakpoint-down(mobile) {
+    top: 20px;
+  }
 }
 
 .header {
@@ -15,8 +25,17 @@
 
   strong {
     font-size: 32px;
-    font-weight: 700;
     line-height: 32px;
+    font-weight: 700;
     letter-spacing: -0.444px;
+  }
+
+  @include breakpoint-down(mobileSmall) {
+    flex-direction: column;
+    gap: 20px;
+
+    strong {
+      font-size: 24px;
+    }
   }
 }
