@@ -2,6 +2,10 @@
 
 .wrapper {
   padding: 0 32px;
+
+  @include breakpoint-down(small) {
+    padding: 0 16px;
+  }
 }
 
 .hero {
@@ -17,6 +21,12 @@
   @include breakpoint-down(large) {
     padding: 0 0 72px;
   }
+
+  @include breakpoint-down(small) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 0 92px;
+  }
 }
 
 .hero__article {
@@ -26,6 +36,17 @@
   @include breakpoint-down(xLarge) {
     padding: 150px 0 0;
     max-width: 666px;
+  }
+
+  @include breakpoint-down(medium) {
+    max-width: 370px;
+  }
+
+  @include breakpoint-down(small) {
+    padding: 0;
+    margin: 40px 0 0;
+    text-align: center;
+    max-width: 100%;
   }
 }
 
@@ -53,6 +74,22 @@
     }
   }
 
+  @include breakpoint-down(medium) {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.1px;
+  }
+
+  @include breakpoint-down(small) {
+    > span {
+      display: block;
+    }
+
+    > span span {
+      display: inline;
+    }
+  }
+
   strong {
     position: relative;
 
@@ -69,6 +106,11 @@
       @include breakpoint-down(xLarge) {
         bottom: 0;
       }
+
+      @include breakpoint-down(small) {
+        height: 4px;
+        bottom: 0;
+      }
     }
   }
 }
@@ -83,6 +125,17 @@
   @include breakpoint-down(xLarge) {
     margin: 66px 0 0;
   }
+
+  @include breakpoint-down(medium) {
+    max-width: 286px;
+  }
+
+  @include breakpoint-down(small) {
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 380px;
+    margin: 24px auto 0;
+  }
 }
 
 .hero__button {
@@ -91,6 +144,10 @@
 
   @include breakpoint-down(xLarge) {
     margin: 34px 0 0;
+  }
+
+  @include breakpoint-down(small) {
+    margin: 24px auto 0;
   }
 }
 
@@ -102,6 +159,14 @@
 
   @include breakpoint-down(large) {
     max-width: 322px;
+  }
+
+  @include breakpoint-down(medium) {
+    max-width: 278px;
+  }
+
+  @include breakpoint-down(small) {
+    position: static;
   }
 
   img {

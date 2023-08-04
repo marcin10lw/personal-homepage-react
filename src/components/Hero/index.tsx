@@ -23,7 +23,7 @@ const Hero = () => {
         </article>
 
         <picture className={styles.hero__picture}>
-          <source media="(max-width: 767px)" srcSet={imageMobile} />
+          <source media="(max-width: 576px)" srcSet={imageMobile} />
           <source media="(max-width: 992px)" srcSet={imageTablet} />
           <img src={imageDesktop} alt="Marcin Augun" />
         </picture>
