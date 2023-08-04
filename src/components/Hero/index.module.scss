@@ -1,0 +1,111 @@
+@use '../../sass/style.scss' as *;
+
+.wrapper {
+  padding: 0 32px;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  padding: 0 0 230px;
+  border-bottom: 1px solid $white;
+
+  @include breakpoint-down(xLarge) {
+    position: static;
+  }
+
+  @include breakpoint-down(large) {
+    padding: 0 0 72px;
+  }
+}
+
+.hero__article {
+  padding: 198px 0 0;
+  z-index: 9;
+
+  @include breakpoint-down(xLarge) {
+    padding: 150px 0 0;
+    max-width: 666px;
+  }
+}
+
+.hero__heading {
+  margin: 0;
+  font-size: 88px;
+  font-weight: 700;
+  letter-spacing: -2.5px;
+
+  > span {
+    display: block;
+  }
+
+  @include breakpoint-down(xLarge) {
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -2px;
+
+    > span {
+      display: inline;
+    }
+
+    > span span {
+      display: block;
+    }
+  }
+
+  strong {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      bottom: 6px;
+      z-index: -1;
+      height: 6px;
+      background-color: $green;
+
+      @include breakpoint-down(xLarge) {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.hero__description {
+  max-width: 445px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 43px 0 0;
+
+  @include breakpoint-down(xLarge) {
+    margin: 66px 0 0;
+  }
+}
+
+.hero__button {
+  @include button();
+  margin: 66px 0 0;
+
+  @include breakpoint-down(xLarge) {
+    margin: 34px 0 0;
+  }
+}
+
+.hero__picture {
+  max-width: 445px;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @include breakpoint-down(large) {
+    max-width: 322px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}

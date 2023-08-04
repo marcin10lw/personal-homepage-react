@@ -5,7 +5,7 @@
   align-items: center;
   gap: 32px;
 
-  @include breakpoint-down(mobileSmall) {
+  @include breakpoint-down(small) {
     gap: 25px;
   }
 }
@@ -17,7 +17,7 @@
   width: 26px;
   height: 26px;
 
-  @include breakpoint-down(mobileSmall) {
+  @include breakpoint-down(small) {
     width: 20px;
     height: 20px;
   }

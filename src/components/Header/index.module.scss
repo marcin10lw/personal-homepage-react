@@ -4,13 +4,14 @@
   position: absolute;
   width: 100%;
   top: 38px;
+  z-index: 99;
   padding-inline: 30px;
 
-  @include breakpoint-down(tablet) {
+  @include breakpoint-down(large) {
     top: 30px;
   }
 
-  @include breakpoint-down(mobile) {
+  @include breakpoint-down(medium) {
     top: 20px;
   }
 }
@@ -30,7 +31,15 @@
     letter-spacing: -0.444px;
   }
 
-  @include breakpoint-down(mobileSmall) {
+  ul {
+    padding: 0 29px 0 0;
+
+    @include breakpoint-down(xLarge) {
+      padding: 0;
+    }
+  }
+
+  @include breakpoint-down(small) {
     flex-direction: column;
     gap: 20px;
 
