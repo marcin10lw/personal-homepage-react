@@ -14,6 +14,29 @@
   padding: 0 0 230px;
   border-bottom: 1px solid $white;
 
+  &::before {
+    content: url('../../assets/images/pattern-rings.svg');
+    position: absolute;
+    top: 139px;
+    left: -264px;
+    z-index: -1;
+
+    @include breakpoint-down(xLarge) {
+      top: 86px;
+    }
+
+    @include breakpoint-down(medium) {
+      top: 97px;
+      left: -248px;
+    }
+
+    @include breakpoint-down(small) {
+      top: 8.125rem;
+      top: clamp(8.125rem, -4.7rem + 54.73vw, 15rem);
+      left: -336px;
+    }
+  }
+
   @include breakpoint-down(xLarge) {
     position: static;
   }
@@ -92,6 +115,7 @@
 
   strong {
     position: relative;
+    white-space: nowrap;
 
     &::after {
       content: '';
@@ -127,7 +151,8 @@
   }
 
   @include breakpoint-down(medium) {
-    max-width: 286px;
+    max-width: 17.875rem;
+    max-width: clamp(17.875rem, -7.38rem + 70.157vw, 26.25rem);
   }
 
   @include breakpoint-down(small) {
@@ -141,6 +166,7 @@
 .hero__button {
   @include button();
   margin: 66px 0 0;
+  text-transform: uppercase;
 
   @include breakpoint-down(xLarge) {
     margin: 34px 0 0;
@@ -157,6 +183,25 @@
   right: 0;
   top: 0;
 
+  &::before {
+    content: url('../../assets/images/pattern-circle.svg');
+    position: absolute;
+    left: -66px;
+    bottom: 60px;
+
+    @include breakpoint-down(xLarge) {
+      left: unset;
+      right: -66px;
+      bottom: -4px;
+    }
+
+    @include breakpoint-down(small) {
+      bottom: unset;
+      top: 15.875rem;
+      top: clamp(15.875rem, -10.71rem + 113.43vw, 30.125rem);
+    }
+  }
+
   @include breakpoint-down(large) {
     max-width: 322px;
   }
@@ -167,6 +212,8 @@
 
   @include breakpoint-down(small) {
     position: static;
+    max-width: 10.875rem;
+    max-width: clamp(10.875rem, -1.25rem + 51.74vw, 17.375rem);
   }
 
   img {

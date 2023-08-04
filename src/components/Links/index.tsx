@@ -1,14 +1,14 @@
 import styles from './index.module.scss';
-import { AiFillGithub } from 'react-icons/ai';
 import { SiFrontendmentor } from 'react-icons/si';
 import { BsLinkedin } from 'react-icons/bs';
+import { ImGithub } from 'react-icons/im';
 
 const Links = () => {
   return (
     <ul className={styles.linksList}>
       <li>
         <a href="https://github.com/marcin10lw" target="_blank" rel="noopener noreferrer">
-          <AiFillGithub className={styles.linksList__icon} />
+          <ImGithub className={styles.linksList__icon} />
         </a>
       </li>
       <li>
