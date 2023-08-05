@@ -14,11 +14,10 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   color: $white;
   background-color: $black;
-  overflow-x: hidden;
 }
 
 #root {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 ul {
