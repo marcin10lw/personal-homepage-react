@@ -18,17 +18,17 @@
   &::before {
     content: url('../../assets/images/pattern-rings.svg');
     position: absolute;
-    top: 139px;
-    left: -264px;
+    top: 135px;
+    left: -268px;
     z-index: -1;
 
     @include breakpoint-down(xLarge) {
-      top: 86px;
+      top: 78px;
     }
 
     @include breakpoint-down(medium) {
-      top: 97px;
-      left: -248px;
+      top: 100px;
+      left: -364px;
     }
 
     @include breakpoint-down(small) {
