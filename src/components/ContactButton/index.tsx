@@ -1,7 +1,5 @@
-import styles from './index.module.scss';
-
 const ContactButton = () => {
-  return <button className={styles.contactButton}>contact me</button>;
+  return <button className="button">contact me</button>;
 };
 
 export default ContactButton;
