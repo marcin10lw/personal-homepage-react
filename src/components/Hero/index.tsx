@@ -9,13 +9,8 @@ const Hero = () => {
     <section className={styles.wrapper}>
       <div className={`container ${styles.hero}`}>
         <article className={styles.hero__article}>
-          <h1 className={styles.hero__heading}>
-            <span>
-              <span>Nice to</span> meet you!
-            </span>{' '}
-            <span>
-              I&apos;m <strong>Marcin Augun</strong>.
-            </span>
+          <h1 className={`heading ${styles.hero__heading}`}>
+            <span>Nice to meet you!</span> I&apos;m <strong>Marcin Augun</strong>.
           </h1>
           <p className={styles.hero__description}>
             Based in Poland, I’m a front-end developer passionate about building accessible web apps that users love.

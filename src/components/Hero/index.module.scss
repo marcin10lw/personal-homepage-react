@@ -75,42 +75,27 @@
 }
 
 .hero__heading {
-  margin: 0;
-  font-size: 88px;
-  font-weight: 700;
-  letter-spacing: -2.5px;
-
-  > span {
-    display: block;
-  }
+  max-width: 800px;
 
   @include breakpoint-down(xLarge) {
-    font-size: 72px;
-    line-height: 72px;
-    letter-spacing: -2px;
-
-    > span {
-      display: inline;
-    }
-
-    > span span {
-      display: block;
+    span {
+      display: inline-block;
+      line-height: 82%;
+      max-width: 331px;
     }
   }
 
   @include breakpoint-down(medium) {
-    font-size: 40px;
-    line-height: 40px;
-    letter-spacing: -1.1px;
+    span {
+      max-width: 184px;
+    }
   }
 
   @include breakpoint-down(small) {
-    > span {
+    span {
       display: block;
-    }
-
-    > span span {
-      display: inline;
+      max-width: 100%;
+      line-height: 100%;
     }
   }
 
