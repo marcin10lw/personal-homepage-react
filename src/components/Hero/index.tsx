@@ -2,6 +2,7 @@ import styles from './index.module.scss';
 import imageDesktop from 'assets/images/image-profile-desktop.webp';
 import imageTablet from 'assets/images/image-profile-tablet.webp';
 import imageMobile from 'assets/images/image-profile-mobile.webp';
+import ContactButton from 'components/ContactButton';
 
 const Hero = () => {
   return (
@@ -19,7 +20,9 @@ const Hero = () => {
           <p className={styles.hero__description}>
             Based in Poland, I’m a front-end developer passionate about building accessible web apps that users love.
           </p>
-          <button className={`button ${styles.hero__button}`}>contact me</button>
+          <div className={styles.hero__button}>
+            <ContactButton />
+          </div>
         </article>
 
         <picture className={styles.hero__picture}>
