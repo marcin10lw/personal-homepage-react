@@ -1,6 +1,7 @@
 @use '../../sass/style.scss' as *;
 
 .wrapper {
+  position: relative;
   padding: 0 32px;
 
   @include breakpoint-down(small) {
