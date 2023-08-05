@@ -1,5 +1,4 @@
 @use './colors.scss' as *;
-@use '../utils/brekpoints.scss' as *;
 
 html {
   box-sizing: border-box;
@@ -46,17 +45,4 @@ fieldset {
   border: none;
   padding: 0;
   margin: 0;
-}
-
-.container {
-  max-width: 1110px;
-  margin-inline: auto;
-}
-
-.main {
-  padding-inline: 32px;
-
-  @include breakpoint-down(small) {
-    padding-inline: 16px;
-  }
 }
