@@ -7,3 +7,10 @@
     margin: 0;
   }
 }
+
+.projects__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 69px 30px;
+  margin: 80px 0 0;
+}
