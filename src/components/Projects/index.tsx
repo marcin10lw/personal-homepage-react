@@ -3,10 +3,12 @@ import { useQuery } from '@tanstack/react-query';
 import ContactButton from 'components/ContactButton';
 import Project from './Project';
 import { getProjects } from './getProjects';
+import { filterProjects } from './filterProjects';
 import styles from './index.module.scss';
 
 const Projects = () => {
   const { data } = useQuery(['projects'], getProjects);
+  const filteredProjects = filterProjects(data);
 
   return (
     <section>
@@ -16,7 +18,7 @@ const Projects = () => {
           <ContactButton />
         </header>
         <ul className={styles.projects__list}>
-          {data?.map(({ id, name, html_url, owner }) => (
+          {filteredProjects?.map(({ id, name, html_url, owner }) => (
             <li key={id}>
               <Project
                 name={name}
