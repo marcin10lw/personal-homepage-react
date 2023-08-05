@@ -1,0 +1,67 @@
+@use '../../sass/style.scss' as *;
+
+.skills {
+  padding: 72px 0 140px;
+
+  @include breakpoint-down(medium) {
+    padding: 52px 0 100px;
+  }
+
+  @include breakpoint-down(small) {
+    padding: 40px 0 80px;
+  }
+}
+
+.skills__list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 58px 30px;
+
+  &::after {
+    content: url('../../assets/images/pattern-rings.svg');
+    position: absolute;
+    right: -380px;
+    top: 76%;
+  }
+
+  li {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: -1.5px;
+  }
+
+  @include breakpoint-down(large) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 52px 0;
+
+    &::after {
+      top: 84%;
+    }
+  }
+
+  @include breakpoint-down(medium) {
+    li {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -1px;
+    }
+  }
+
+  @include breakpoint-down(small) {
+    grid-template-columns: 1fr;
+    gap: 24px 0;
+    padding: 0 0 40px;
+    border-bottom: 1px solid $white;
+
+    &::after {
+      top: calc(92% - 2px);
+    }
+
+    li {
+      text-align: center;
+    }
+  }
+}

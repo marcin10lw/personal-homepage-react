@@ -1,4 +1,5 @@
 @use './colors.scss' as *;
+@use '../utils/brekpoints.scss' as *;
 
 html {
   box-sizing: border-box;
@@ -14,6 +15,10 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   color: $white;
   background-color: $black;
+  overflow-x: hidden;
+}
+
+#root {
   overflow-x: hidden;
 }
 
@@ -46,4 +51,12 @@ fieldset {
 .container {
   max-width: 1110px;
   margin-inline: auto;
+}
+
+.main {
+  padding-inline: 32px;
+
+  @include breakpoint-down(small) {
+    padding-inline: 16px;
+  }
 }
