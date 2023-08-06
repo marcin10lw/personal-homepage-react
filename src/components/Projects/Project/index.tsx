@@ -24,7 +24,7 @@ const Project = ({ name, codeUrl, liveUrl }: ProjectProps) => {
   };
 
   return (
-    <article>
+    <article className={styles.projectWrapper}>
       <div className={styles.project}>
         <div
           className={`${styles.project__image} ${
@@ -33,33 +33,37 @@ const Project = ({ name, codeUrl, liveUrl }: ProjectProps) => {
         >
           <img src={image} alt={name} />
         </div>
-        <h3 className={styles.project__name}>{projectName}</h3>
-        <ul className={styles.project__tags}>{tags?.map((tag) => <li key={tag}>{tag}</li>)}</ul>
-        <div
-          className={`${styles.project__links} ${
-            isLinkFocused ? styles['project__links--focused'] : ''
-          }`}
-        >
-          <a
-            className="button"
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onFocus={onLinkFocus}
-            onBlur={onLinkBlur}
+        <div className={styles.flex}>
+          <div>
+            <h3 className={styles.project__name}>{projectName}</h3>
+            <ul className={styles.project__tags}>{tags?.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+          </div>
+          <div
+            className={`${styles.project__links} ${
+              isLinkFocused ? styles['project__links--focused'] : ''
+            }`}
           >
-            view peoject
-          </a>
-          <a
-            className="button"
-            href={codeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onFocus={onLinkFocus}
-            onBlur={onLinkBlur}
-          >
-            view code
-          </a>
+            <a
+              className="button"
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onFocus={onLinkFocus}
+              onBlur={onLinkBlur}
+            >
+              view peoject
+            </a>
+            <a
+              className="button"
+              href={codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onFocus={onLinkFocus}
+              onBlur={onLinkBlur}
+            >
+              view code
+            </a>
+          </div>
         </div>
       </div>
     </article>
