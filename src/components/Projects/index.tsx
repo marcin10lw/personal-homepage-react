@@ -10,6 +10,8 @@ const Projects = () => {
   const { data } = useQuery(['projects'], getProjects);
   const filteredProjects = filterProjects(data);
 
+  console.log(data);
+
   return (
     <section>
       <div className={`container`}>
