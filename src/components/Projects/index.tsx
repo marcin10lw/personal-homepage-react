@@ -3,12 +3,14 @@ import { useQuery } from '@tanstack/react-query';
 import ContactButton from 'components/ContactButton';
 import Project from './Project';
 import { getProjects } from './getProjects';
-import { filterProjects } from './filterProjects';
 import styles from './index.module.scss';
+import { projectsMap } from './projectsMap';
 
 const Projects = () => {
   const { data } = useQuery(['projects'], getProjects);
-  const filteredProjects = filterProjects(data);
+  const filteredProjects = data?.filter((project) => {
+    return !!projectsMap.find((projectMap) => projectMap.keyName === project.name);
+  });
 
   return (
     <section>
