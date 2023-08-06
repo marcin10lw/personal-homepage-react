@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import image from 'assets/images/thumbnail-project-1-large.webp';
-import styles from './index.module.scss';
 import { projectsMap } from '../projectsMap';
+import styles from './index.module.scss';
+import image from 'assets/images/thumbnail-project-1-large.webp';
 
 type ProjectProps = {
   name: string;
