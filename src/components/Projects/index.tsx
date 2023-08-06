@@ -12,7 +12,7 @@ const Projects = () => {
 
   return (
     <section>
-      <div className={`container`}>
+      <div className={`container ${styles.projects}`}>
         <header className={styles.projects__header}>
           <h2 className={`heading`}>Projects</h2>
           <ContactButton />

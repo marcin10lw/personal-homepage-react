@@ -1,5 +1,17 @@
 @use '../../sass/style.scss' as *;
 
+.projects {
+  padding: 0 0 140px;
+
+  @include breakpoint-down(large) {
+    padding: 0 0 100px;
+  }
+
+  @include breakpoint-down(medium) {
+    padding: 0 0 80px;
+  }
+}
+
 .projects__header {
   display: flex;
   justify-content: space-between;
