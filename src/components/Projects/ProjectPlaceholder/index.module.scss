@@ -1,0 +1,15 @@
+@use '../../../sass/style.scss' as *;
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.links {
+  display: none;
+
+  @include breakpoint-down(large) {
+    display: block;
+  }
+}

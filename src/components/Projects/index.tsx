@@ -5,10 +5,13 @@ import Project from './Project';
 import useProjects from './useProjects';
 import { getProjects } from './getProjects';
 import styles from './index.module.scss';
+import ProjectPlaceholder from './ProjectPlaceholder';
 
 const Projects = () => {
-  const { data } = useQuery(['projects'], getProjects);
+  const { data, status } = useQuery(['projects'], getProjects);
   const sortedProjects = useProjects(data);
+
+  const placeholderArray = Array.from({ length: 6 }, (_, index) => index + 1);
 
   return (
     <section>
@@ -18,15 +21,22 @@ const Projects = () => {
           <ContactButton />
         </header>
         <ul className={styles.projects__list}>
-          {sortedProjects?.map(({ id, name, html_url, owner }) => (
-            <li key={id}>
-              <Project
-                name={name}
-                codeUrl={html_url}
-                liveUrl={`https://${owner.login}.github.io/${name}/`}
-              />
-            </li>
-          ))}
+          {status === 'success' &&
+            sortedProjects?.map(({ id, name, html_url, owner }) => (
+              <li key={id}>
+                <Project
+                  name={name}
+                  codeUrl={html_url}
+                  liveUrl={`https://${owner.login}.github.io/${name}/`}
+                />
+              </li>
+            ))}
+          {status === 'loading' &&
+            placeholderArray.map((element) => (
+              <li key={element}>
+                <ProjectPlaceholder />
+              </li>
+            ))}
         </ul>
       </div>
     </section>
