@@ -1,3 +1,5 @@
+@use '../../sass/style.scss' as *;
+
 .projects__header {
   display: flex;
   justify-content: space-between;
@@ -13,4 +15,9 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 69px 30px;
   margin: 80px 0 0;
+
+  @include breakpoint-down(large) {
+    margin: 60px 0 0;
+    gap: 60px 20px;
+  }
 }
