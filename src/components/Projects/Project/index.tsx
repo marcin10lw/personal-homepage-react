@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import image from 'assets/images/thumbnail-project-1-large.webp';
 import styles from './index.module.scss';
+import { projectsMap } from '../projectsMap';
 
 type ProjectProps = {
   name: string;
@@ -11,6 +12,8 @@ type ProjectProps = {
 
 const Project = ({ name, codeUrl, liveUrl }: ProjectProps) => {
   const [isLinkFocused, setIsLinkFocused] = useState(false);
+  const tags = projectsMap.find((project) => project.keyName === name)?.tags;
+  const projectName = projectsMap.find((project) => project.keyName === name)?.name;
 
   const onLinkFocus = () => {
     setIsLinkFocused(true);
@@ -30,11 +33,8 @@ const Project = ({ name, codeUrl, liveUrl }: ProjectProps) => {
         >
           <img src={image} alt={name} />
         </div>
-        <h3 className={styles.project__name}>{name}</h3>
-        <ul className={styles.project__tags}>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
+        <h3 className={styles.project__name}>{projectName}</h3>
+        <ul className={styles.project__tags}>{tags?.map((tag) => <li key={tag}>{tag}</li>)}</ul>
         <div
           className={`${styles.project__links} ${
             isLinkFocused ? styles['project__links--focused'] : ''

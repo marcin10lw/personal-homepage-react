@@ -6,6 +6,7 @@ const filteredProjectsNames = [
   'currency-converter',
   'homepage',
   'To-do-list',
+  'news-page-react',
   'video-example',
 ];
 
