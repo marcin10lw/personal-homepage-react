@@ -29,6 +29,7 @@ const Projects = () => {
                   name="TerraEye"
                   liveUrl="https://terraeye.co/"
                   tags={['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS']}
+                  hasSingleLink
                 />
               </li>
               {sortedProjects?.map(({ id, name, html_url, owner }) => (

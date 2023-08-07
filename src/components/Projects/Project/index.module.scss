@@ -20,11 +20,18 @@
         opacity: 1;
         transform: translate(-50%, 0%);
       }
+
+      .project__image img {
+        transform: scale(1.05);
+      }
     }
   }
 }
 
 .project__image {
+  flex-shrink: 0;
+  overflow: hidden;
+
   @include breakpoint-up(large) {
     position: relative;
 
@@ -33,6 +40,7 @@
       position: absolute;
       display: block;
       inset: 0;
+      z-index: 1;
       background-color: $black;
       opacity: 0;
       transition: opacity 200ms ease-in-out;
@@ -42,6 +50,8 @@
   img {
     display: block;
     width: 100%;
+    object-fit: cover;
+    transition: transform 200ms ease-in-out;
   }
 }
 
@@ -107,5 +117,12 @@
   @include breakpoint-up(large) {
     opacity: 1;
     transform: translate(-50%, 0%);
+  }
+}
+
+.project__links--singleLink {
+  @include breakpoint-up(large) {
+    top: 9.125rem;
+    top: clamp(9.125rem, -1.52rem + 17.17vw, 11.25rem);
   }
 }

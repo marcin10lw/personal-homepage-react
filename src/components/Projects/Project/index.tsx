@@ -8,9 +8,16 @@ type ProjectProps = {
   liveUrl: string;
   codeUrl?: string;
   tags: string[] | undefined;
+  hasSingleLink?: boolean;
 };
 
-const Project = ({ name, codeUrl, liveUrl, tags }: ProjectProps) => {
+const Project = ({
+  name,
+  codeUrl,
+  liveUrl,
+  tags,
+  hasSingleLink,
+}: ProjectProps) => {
   const [isLinkFocused, setIsLinkFocused] = useState(false);
 
   const onLinkFocus = () => {
@@ -41,7 +48,7 @@ const Project = ({ name, codeUrl, liveUrl, tags }: ProjectProps) => {
           <div
             className={`${styles.project__links} ${
               isLinkFocused ? styles['project__links--focused'] : ''
-            }`}
+            } ${hasSingleLink ? styles['project__links--singleLink'] : ''}`}
           >
             <a
               className="button"
