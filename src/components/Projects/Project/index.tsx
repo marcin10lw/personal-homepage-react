@@ -1,19 +1,17 @@
 import { useState } from 'react';
 
-import { projectsMap } from '../projectsMap';
 import styles from './index.module.scss';
 import image from 'assets/images/thumbnail-project-1-large.webp';
 
 type ProjectProps = {
-  name: string;
+  name: string | undefined;
   liveUrl: string;
-  codeUrl: string;
+  codeUrl?: string;
+  tags: string[] | undefined;
 };
 
-const Project = ({ name, codeUrl, liveUrl }: ProjectProps) => {
+const Project = ({ name, codeUrl, liveUrl, tags }: ProjectProps) => {
   const [isLinkFocused, setIsLinkFocused] = useState(false);
-  const tags = projectsMap.find((project) => project.keyName === name)?.tags;
-  const projectName = projectsMap.find((project) => project.keyName === name)?.name;
 
   const onLinkFocus = () => {
     setIsLinkFocused(true);
@@ -35,8 +33,10 @@ const Project = ({ name, codeUrl, liveUrl }: ProjectProps) => {
         </div>
         <div className={styles.flex}>
           <div>
-            <h3 className={styles.project__name}>{projectName}</h3>
-            <ul className={styles.project__tags}>{tags?.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+            <h3 className={styles.project__name}>{name}</h3>
+            <ul className={styles.project__tags}>
+              {tags?.map((tag) => <li key={tag}>{tag}</li>)}
+            </ul>
           </div>
           <div
             className={`${styles.project__links} ${
@@ -53,16 +53,18 @@ const Project = ({ name, codeUrl, liveUrl }: ProjectProps) => {
             >
               view peoject
             </a>
-            <a
-              className="button"
-              href={codeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onFocus={onLinkFocus}
-              onBlur={onLinkBlur}
-            >
-              view code
-            </a>
+            {codeUrl && (
+              <a
+                className="button"
+                href={codeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onFocus={onLinkFocus}
+                onBlur={onLinkBlur}
+              >
+                view code
+              </a>
+            )}
           </div>
         </div>
       </div>

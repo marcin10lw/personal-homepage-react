@@ -1,3 +1,4 @@
+import { findProject } from './findProject';
 import { projectsMap } from './projectsMap';
 import { Project } from './types';
 
@@ -7,11 +8,8 @@ const useProjects = (projects: Project[] | undefined) => {
   });
 
   const sortedProjects = filteredProjects?.sort((a, b) => {
-    const findProject = (project: Project) =>
-      projectsMap.find((projectMap) => projectMap.keyName === project.name)?.id;
-
-    const project1 = findProject(a);
-    const project2 = findProject(b);
+    const project1 = findProject(a.name)?.id;
+    const project2 = findProject(b.name)?.id;
 
     if (project1 && project2) {
       return project1 - project2;

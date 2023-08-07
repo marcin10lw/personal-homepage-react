@@ -6,6 +6,7 @@ import useProjects from './useProjects';
 import { getProjects } from './getProjects';
 import styles from './index.module.scss';
 import ProjectPlaceholder from './ProjectPlaceholder';
+import { findProject } from './findProject';
 
 const Projects = () => {
   const { data, status } = useQuery(['projects'], getProjects);
@@ -21,16 +22,27 @@ const Projects = () => {
           <ContactButton />
         </header>
         <ul className={styles.projects__list}>
-          {status === 'success' &&
-            sortedProjects?.map(({ id, name, html_url, owner }) => (
-              <li key={id}>
+          {status === 'success' && (
+            <>
+              <li>
                 <Project
-                  name={name}
-                  codeUrl={html_url}
-                  liveUrl={`https://${owner.login}.github.io/${name}/`}
+                  name="TerraEye"
+                  liveUrl="https://terraeye.co/"
+                  tags={['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS']}
                 />
               </li>
-            ))}
+              {sortedProjects?.map(({ id, name, html_url, owner }) => (
+                <li key={id}>
+                  <Project
+                    name={findProject(name)?.name}
+                    codeUrl={html_url}
+                    liveUrl={`https://${owner.login}.github.io/${name}/`}
+                    tags={findProject(name)?.tags}
+                  />
+                </li>
+              ))}
+            </>
+          )}
           {status === 'loading' &&
             placeholderArray.map((element) => (
               <li key={element}>
