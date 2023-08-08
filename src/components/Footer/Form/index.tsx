@@ -1,33 +1,8 @@
-import { useState } from 'react';
 import styles from './index.module.scss';
-import { sendFormData } from './sendFormData';
-
-const formDataInitialState = {
-  name: '',
-  email: '',
-  message: '',
-};
+import useForm from './useForm';
 
 const Form = () => {
-  const [formData, setFormData] = useState(formDataInitialState);
-
-  const onInputChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = event.target;
-
-    setFormData((formData) => ({ ...formData, [name]: value }));
-  };
-
-  const onFormSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-
-    try {
-      await sendFormData(formData);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { formData, status, onInputChange, onFormSubmit } = useForm();
 
   return (
     <form onSubmit={onFormSubmit}>
@@ -35,6 +10,7 @@ const Form = () => {
         <div className={styles.input}>
           <label htmlFor="name">name</label>
           <input
+            value={formData.name}
             onChange={onInputChange}
             id="name"
             type="text"
@@ -48,6 +24,7 @@ const Form = () => {
         <div className={styles.input}>
           <label htmlFor="email">email</label>
           <input
+            value={formData.email}
             onChange={onInputChange}
             id="email"
             type="email"
@@ -61,6 +38,7 @@ const Form = () => {
         <div className={styles.input}>
           <label htmlFor="message">email</label>
           <textarea
+            value={formData.message}
             onChange={onInputChange}
             id="message"
             name="message"
@@ -73,7 +51,9 @@ const Form = () => {
       </fieldset>
 
       <div className={styles.form__button}>
-        <button className={`button`}>send message</button>
+        <button className={`button`} disabled={status === 'loading'}>
+          send message
+        </button>
       </div>
     </form>
   );

@@ -4,7 +4,7 @@ import Form from './Form';
 
 const Footer = () => {
   return (
-    <div className={styles.footerWrapper}>
+    <div className={styles.footerWrapper} id="footer">
       <footer className={`container`}>
         <div className={styles.footer__mainContent}>
           <article className={styles.footer__article}>

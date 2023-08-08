@@ -3,3 +3,5 @@ export type FormData = {
   email: string;
   message: string;
 };
+
+export type FetchStatus = 'idle' | 'loading' | 'success' | 'error';
