@@ -1,3 +1,4 @@
+import Links from 'components/Links';
 import styles from './index.module.scss';
 
 const Footer = () => {
@@ -57,6 +58,10 @@ const Footer = () => {
               <button className={`button`}>send message</button>
             </div>
           </form>
+        </div>
+
+        <div className={styles.footer__links}>
+          <Links />
         </div>
       </footer>
     </div>

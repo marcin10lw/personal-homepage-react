@@ -20,31 +20,12 @@
   max-width: 1110px;
   width: 100%;
   margin-inline: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  strong {
-    font-size: 32px;
-    line-height: 32px;
-    font-weight: 700;
-    letter-spacing: -0.444px;
-  }
 
   ul {
     padding: 0 29px 0 0;
 
     @include breakpoint-down(xLarge) {
       padding: 0;
-    }
-  }
-
-  @include breakpoint-down(small) {
-    flex-direction: column;
-    gap: 20px;
-
-    strong {
-      font-size: 24px;
     }
   }
 }
