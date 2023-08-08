@@ -5,31 +5,12 @@
   padding: 84px 32px 92px;
   background-color: $darkGrey;
 
-  // &::before {
-  //   content: url('../../assets/images/pattern-rings.svg');
-  //   display: block;
-  //   position: absolute;
-  //   top: 59%;
-  //   left: -365px;
-  //   z-index: 1;
-  // }
-
   @include breakpoint-down(large) {
     padding: 60px 32px 40px;
-
-    // &::before {
-    //   top: 76%;
-    //   left: -388px;
-    // }
   }
 
   @include breakpoint-down(small) {
     padding: 60px 16px 60px;
-
-    // &::before {
-    //   top: 76%;
-    //   left: -388px;
-    // }
   }
 }
 
@@ -42,9 +23,23 @@
   padding: 0 0 92px;
   border-bottom: 1px solid $white;
 
+  &::before {
+    content: url('../../assets/images/pattern-rings.svg');
+    display: block;
+    position: absolute;
+    top: 59%;
+    left: -365px;
+    z-index: 1;
+  }
+
   @include breakpoint-down(large) {
     grid-template-columns: 63%;
     justify-content: center;
+
+    &::before {
+      top: 76%;
+      left: -388px;
+    }
   }
 
   @include breakpoint-down(medium) {
@@ -53,6 +48,11 @@
 
   @include breakpoint-down(small) {
     padding: 0 0 87px;
+
+    &::before {
+      top: 64.5%;
+      left: -388px;
+    }
   }
 }
 
