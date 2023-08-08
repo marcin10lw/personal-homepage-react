@@ -1,11 +1,13 @@
 import styles from './index.module.scss';
 import useForm from './useForm';
+import { AiOutlineCheck } from 'react-icons/ai';
+import { BiErrorCircle } from 'react-icons/bi';
 
 const Form = () => {
   const { formData, status, onInputChange, onFormSubmit } = useForm();
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} className={styles.form}>
       <fieldset className={styles.form__fieldset}>
         <div className={styles.input}>
           <label htmlFor="name">name</label>
@@ -52,6 +54,27 @@ const Form = () => {
 
       <div className={styles.form__button}>
         <button disabled={status === 'loading'}>send message</button>
+      </div>
+
+      <div className={styles.info}>
+        {status === 'success' && (
+          <>
+            <AiOutlineCheck
+              className={`${styles.info__icon} ${styles['info__icon--success']}`}
+            />
+            <p>Message sent!</p>
+          </>
+        )}
+        {status === 'error' && (
+          <>
+            <>
+              <BiErrorCircle
+                className={`${styles.info__icon} ${styles['info__icon--error']}`}
+              />
+              <p>Couldn&apos;t send message.</p>
+            </>
+          </>
+        )}
       </div>
     </form>
   );
