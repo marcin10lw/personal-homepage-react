@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './index.module.scss';
+import { sendFormData } from './sendFormData';
 
 const formDataInitialState = {
   name: '',
@@ -10,8 +11,6 @@ const formDataInitialState = {
 const Form = () => {
   const [formData, setFormData] = useState(formDataInitialState);
 
-  console.log(formData);
-
   const onInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -20,8 +19,18 @@ const Form = () => {
     setFormData((formData) => ({ ...formData, [name]: value }));
   };
 
+  const onFormSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    try {
+      await sendFormData(formData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={onFormSubmit}>
       <fieldset className={styles.form__fieldset}>
         <div className={styles.input}>
           <label htmlFor="name">name</label>
