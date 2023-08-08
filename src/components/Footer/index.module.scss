@@ -1,0 +1,143 @@
+@use '../../sass/style.scss' as *;
+
+.footerWrapper {
+  position: relative;
+  padding: 84px 32px 92px;
+  background-color: $darkGrey;
+
+  // &::before {
+  //   content: url('../../assets/images/pattern-rings.svg');
+  //   display: block;
+  //   position: absolute;
+  //   top: 59%;
+  //   left: -365px;
+  //   z-index: 1;
+  // }
+
+  @include breakpoint-down(large) {
+    padding: 60px 32px 40px;
+
+    // &::before {
+    //   top: 76%;
+    //   left: -388px;
+    // }
+  }
+}
+
+.footer__mainContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 445px));
+  justify-content: space-between;
+  gap: 80px;
+  padding: 0 0 92px;
+  border-bottom: 1px solid $white;
+
+  // &::before {
+  //   content: url('../../assets/images/pattern-rings.svg');
+  //   display: block;
+  //   position: absolute;
+  //   top: 59%;
+  //   left: -365px;
+  // }
+
+  @include breakpoint-down(large) {
+    grid-template-columns: 63%;
+    justify-content: center;
+
+    // &::before {
+    //   top: 76%;
+    //   left: -388px;
+    // }
+  }
+}
+
+.footer__article {
+  @include breakpoint-down(large) {
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 36px 0 0;
+  }
+}
+
+.form__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.input {
+  position: relative;
+
+  label {
+    display: none;
+  }
+
+  input,
+  textarea {
+    display: block;
+    background-color: transparent;
+    color: $white;
+    border: none;
+    border-bottom: 1px solid $white;
+    padding: 0 24px 17px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-bottom: 1px solid $red;
+
+      + .input__error {
+        &::before {
+          display: block;
+        }
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+
+    &:valid {
+      border-bottom: 1px solid $green;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 107px;
+  }
+}
+
+.input__error {
+  &::before {
+    content: ('Sorry, invalid format here');
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 5px);
+    font-size: 12px;
+    letter-spacing: -0.17px;
+    color: $red;
+  }
+
+  &::after {
+    content: (url('../../assets/images/error-icon.svg'));
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.form__button {
+  display: block;
+  margin: 32px 0 0 auto;
+}
