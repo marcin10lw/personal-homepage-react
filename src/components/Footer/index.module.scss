@@ -22,6 +22,15 @@
     //   left: -388px;
     // }
   }
+
+  @include breakpoint-down(small) {
+    padding: 60px 16px 60px;
+
+    // &::before {
+    //   top: 76%;
+    //   left: -388px;
+    // }
+  }
 }
 
 .footer__mainContent {
@@ -33,34 +42,40 @@
   padding: 0 0 92px;
   border-bottom: 1px solid $white;
 
-  // &::before {
-  //   content: url('../../assets/images/pattern-rings.svg');
-  //   display: block;
-  //   position: absolute;
-  //   top: 59%;
-  //   left: -365px;
-  // }
-
   @include breakpoint-down(large) {
     grid-template-columns: 63%;
     justify-content: center;
+  }
 
-    // &::before {
-    //   top: 76%;
-    //   left: -388px;
-    // }
+  @include breakpoint-down(medium) {
+    grid-template-columns: 1fr;
+  }
+
+  @include breakpoint-down(small) {
+    padding: 0 0 87px;
   }
 }
 
 .footer__article {
-  @include breakpoint-down(large) {
-    text-align: center;
-  }
-
   p {
     font-size: 18px;
     line-height: 28px;
     margin: 36px 0 0;
+  }
+
+  @include breakpoint-down(large) {
+    text-align: center;
+
+    p {
+      margin: 20px 0 0;
+    }
+  }
+
+  @include breakpoint-down(small) {
+    p {
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 }
 
@@ -138,6 +153,6 @@
 }
 
 .form__button {
-  display: block;
-  margin: 32px 0 0 auto;
+  margin: 32px 0 0;
+  text-align: end;
 }

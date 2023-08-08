@@ -53,9 +53,9 @@ const Footer = () => {
               </div>
             </fieldset>
 
-            <button className={`button ${styles.form__button}`}>
-              send message
-            </button>
+            <div className={styles.form__button}>
+              <button className={`button`}>send message</button>
+            </div>
           </form>
         </div>
       </footer>
