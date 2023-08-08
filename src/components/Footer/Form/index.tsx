@@ -51,9 +51,7 @@ const Form = () => {
       </fieldset>
 
       <div className={styles.form__button}>
-        <button className={`button`} disabled={status === 'loading'}>
-          send message
-        </button>
+        <button disabled={status === 'loading'}>send message</button>
       </div>
     </form>
   );

@@ -96,7 +96,7 @@
   }
 
   &::after {
-    content: (url('../../assets/images/error-icon.svg'));
+    content: (url('../../../assets/images/error-icon.svg'));
     display: none;
     position: absolute;
     right: 0;
@@ -107,4 +107,27 @@
 .form__button {
   margin: 32px 0 0;
   text-align: end;
+
+  button {
+    @include button();
+
+    &:disabled {
+      animation: loading 800ms ease-in-out infinite alternate;
+      pointer-events: none;
+      transition: none;
+
+      &::after {
+        background-color: $lightGrey;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.3;
+  }
 }
