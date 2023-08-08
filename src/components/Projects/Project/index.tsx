@@ -51,7 +51,6 @@ const Project = ({
             } ${hasSingleLink ? styles['project__links--singleLink'] : ''}`}
           >
             <a
-              className="button"
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -62,7 +61,6 @@ const Project = ({
             </a>
             {codeUrl && (
               <a
-                className="button"
                 href={codeUrl}
                 target="_blank"
                 rel="noopener noreferrer"

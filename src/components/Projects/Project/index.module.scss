@@ -56,6 +56,10 @@
 }
 
 .project__image--focused {
+  img {
+    transform: scale(1.05);
+  }
+
   &::before {
     opacity: 0.75;
   }
@@ -111,6 +115,10 @@
       opacity 200ms ease-in-out,
       transform 200ms ease-in-out;
   }
+
+  a {
+    @include button();
+  }
 }
 
 .project__links--focused {
@@ -121,6 +129,8 @@
 }
 
 .project__links--singleLink {
+  transform: translate(-50%, 40%);
+
   @include breakpoint-up(large) {
     top: 9.125rem;
     top: clamp(9.125rem, -1.52rem + 17.17vw, 11.25rem);
