@@ -164,6 +164,7 @@
 
 .hero__picture {
   max-width: 445px;
+  width: 100%;
   position: absolute;
   right: 0;
   top: 0;
@@ -172,7 +173,7 @@
     content: url('../../assets/images/pattern-circle.svg');
     position: absolute;
     left: -66px;
-    bottom: 60px;
+    bottom: 90px;
 
     @include breakpoint-down(xLarge) {
       left: unset;
@@ -199,6 +200,7 @@
     position: static;
     max-width: 10.875rem;
     max-width: clamp(10.875rem, -1.25rem + 51.74vw, 17.375rem);
+    aspect-ratio: 174 / 383;
   }
 
   img {
