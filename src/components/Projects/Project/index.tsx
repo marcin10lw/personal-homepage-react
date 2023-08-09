@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import styles from './index.module.scss';
-import image from 'assets/images/thumbnail-project-1-large.webp';
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
 import ProjectLinks from './ProjectLinks';
 
@@ -11,6 +10,7 @@ type ProjectProps = {
   liveUrl: string;
   codeUrl?: string;
   tags: string[] | undefined;
+  image: string;
 };
 
 const Project = ({
@@ -19,6 +19,7 @@ const Project = ({
   liveUrl,
   tags,
   description,
+  image,
 }: ProjectProps) => {
   const [showLinks, setShowLinks] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
