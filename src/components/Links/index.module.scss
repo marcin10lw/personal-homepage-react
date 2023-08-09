@@ -35,7 +35,7 @@
 }
 
 .linksList__icon {
-  @include hover(color);
+  @include hover(color, $green);
   display: block;
   color: $white;
   width: 26px;

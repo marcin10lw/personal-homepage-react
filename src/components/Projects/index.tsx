@@ -27,21 +27,24 @@ const Projects = () => {
               <li>
                 <Project
                   name="TerraEye"
+                  description="This is my first commercial project. The page is written in React with TypeScript. During development I worked with experienced figma designers and programmers. It was a great opportunity to learn and self-develop."
                   liveUrl="https://terraeye.co/"
                   tags={['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS']}
-                  hasSingleLink
                 />
               </li>
-              {sortedProjects?.map(({ id, name, html_url, owner }) => (
-                <li key={id}>
-                  <Project
-                    name={findProject(name)?.name}
-                    codeUrl={html_url}
-                    liveUrl={`https://${owner.login}.github.io/${name}/`}
-                    tags={findProject(name)?.tags}
-                  />
-                </li>
-              ))}
+              {sortedProjects?.map(
+                ({ id, name, html_url, owner, description }) => (
+                  <li key={id}>
+                    <Project
+                      description={description}
+                      name={findProject(name)?.name}
+                      codeUrl={html_url}
+                      liveUrl={`https://${owner.login}.github.io/${name}/`}
+                      tags={findProject(name)?.tags}
+                    />
+                  </li>
+                ),
+              )}
             </>
           )}
           {status === 'loading' &&

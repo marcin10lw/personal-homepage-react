@@ -1,9 +1,10 @@
 @use '../globals/colors.scss' as *;
 
-@mixin hover($property) {
+@mixin hover($property, $value) {
   transition: $property 200ms ease-in-out;
+
   &:hover {
-    #{$property}: $green;
+    #{$property}: $value;
   }
 }
 
@@ -29,5 +30,5 @@
     background-color: $green;
   }
 
-  @include hover(color);
+  @include hover(color, $green);
 }

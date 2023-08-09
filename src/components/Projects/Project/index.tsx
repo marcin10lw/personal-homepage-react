@@ -2,13 +2,15 @@ import { useState } from 'react';
 
 import styles from './index.module.scss';
 import image from 'assets/images/thumbnail-project-1-large.webp';
+import { AiOutlineQuestionCircle } from 'react-icons/ai';
+import ProjectLinks from './ProjectLinks';
 
 type ProjectProps = {
   name: string | undefined;
+  description: string;
   liveUrl: string;
   codeUrl?: string;
   tags: string[] | undefined;
-  hasSingleLink?: boolean;
 };
 
 const Project = ({
@@ -16,61 +18,73 @@ const Project = ({
   codeUrl,
   liveUrl,
   tags,
-  hasSingleLink,
+  description,
 }: ProjectProps) => {
-  const [isLinkFocused, setIsLinkFocused] = useState(false);
+  const [showLinks, setShowLinks] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
 
   const onLinkFocus = () => {
-    setIsLinkFocused(true);
+    setShowLinks(true);
   };
 
   const onLinkBlur = () => {
-    setIsLinkFocused(false);
+    setShowLinks(false);
   };
+
+  const projectLinks = (
+    <ProjectLinks
+      liveUrl={liveUrl}
+      codeUrl={codeUrl}
+      onLinkBlur={onLinkBlur}
+      onLinkFocus={onLinkFocus}
+    />
+  );
 
   return (
     <article className={styles.projectWrapper}>
       <div className={styles.project}>
         <div
+          onMouseEnter={() => !showDescription && setShowLinks(true)}
+          onMouseLeave={() => setShowLinks(false)}
           className={`${styles.project__image} ${
-            isLinkFocused ? styles['project__image--focused'] : ''
+            showLinks ? styles['project__image--focused'] : ''
           }`}
         >
+          <div
+            className={`${styles.project__description} ${
+              showDescription ? styles['project__description--show'] : ''
+            }`}
+          >
+            <p>{description}</p>
+          </div>
           <img src={image} alt={name} />
+          <div className={styles['project__links--desktop']}>
+            {projectLinks}
+          </div>
         </div>
-        <div className={styles.flex}>
+        <div className={styles.project__flex}>
           <div>
-            <h3 className={styles.project__name}>{name}</h3>
+            <div className={styles.wrapper}>
+              <h3 className={styles.project__name}>{name}</h3>
+              <button
+                onClick={() =>
+                  setShowDescription((showDescription) => !showDescription)
+                }
+                className={`${styles.project__showDescription} ${
+                  showDescription
+                    ? styles['project__showDescription--active']
+                    : ''
+                }`}
+              >
+                <AiOutlineQuestionCircle />
+              </button>
+            </div>
             <ul className={styles.project__tags}>
               {tags?.map((tag) => <li key={tag}>{tag}</li>)}
             </ul>
           </div>
-          <div
-            className={`${styles.project__links} ${
-              isLinkFocused ? styles['project__links--focused'] : ''
-            } ${hasSingleLink ? styles['project__links--singleLink'] : ''}`}
-          >
-            <a
-              href={liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onFocus={onLinkFocus}
-              onBlur={onLinkBlur}
-            >
-              view peoject
-            </a>
-            {codeUrl && (
-              <a
-                href={codeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onFocus={onLinkFocus}
-                onBlur={onLinkBlur}
-              >
-                view code
-              </a>
-            )}
-          </div>
+
+          <div className={styles['project__links--mobile']}>{projectLinks}</div>
         </div>
       </div>
     </article>
