@@ -7,7 +7,6 @@ import { getProjects } from './getProjects';
 import styles from './index.module.scss';
 import ProjectPlaceholder from './ProjectPlaceholder';
 import { findProject } from './findProject';
-import terraeyeImage from 'assets/images/terraeye.jpg';
 
 const Projects = () => {
   const { data, status } = useQuery(['projects'], getProjects);
@@ -29,7 +28,7 @@ const Projects = () => {
                 <Project
                   name="TerraEye"
                   description="This is my first commercial project. The page is written in React with TypeScript. During development I worked with experienced figma designers and programmers. It was a great opportunity to learn and self-develop."
-                  image={terraeyeImage}
+                  image="images/terraeye.jpg"
                   liveUrl="https://terraeye.co/"
                   tags={['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS']}
                 />
