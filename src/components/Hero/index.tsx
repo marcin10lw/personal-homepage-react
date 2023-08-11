@@ -11,7 +11,7 @@ const Hero = () => {
         <article className={styles.hero__article}>
           <h1 className={`heading ${styles.hero__heading}`}>
             <span>Nice to meet you!</span> I&apos;m{' '}
-            <strong>Marcin Augun</strong>.
+            <strong className={styles.hero__name}>Marcin Augun</strong>.
           </h1>
           <p className={styles.hero__description}>
             Based in Poland, I’m a front-end developer passionate about building

@@ -98,30 +98,40 @@
       line-height: 100%;
     }
   }
+}
 
-  strong {
-    position: relative;
-    white-space: nowrap;
+.hero__name {
+  position: relative;
+  white-space: nowrap;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      bottom: 6px;
-      z-index: -1;
-      height: 6px;
-      background-color: $green;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    z-index: -1;
+    height: 6px;
+    background-color: $green;
+    animation: rollUnderline 800ms cubic-bezier(0, 0, 0.46, 1) forwards;
+    animation-delay: 1800ms;
 
-      @include breakpoint-down(xLarge) {
-        bottom: 0;
-      }
-
-      @include breakpoint-down(small) {
-        height: 4px;
-        bottom: 0;
-      }
+    @include breakpoint-down(xLarge) {
+      bottom: 0;
     }
+
+    @include breakpoint-down(small) {
+      height: 4px;
+      bottom: 0;
+    }
+  }
+}
+
+@keyframes rollUnderline {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
 
