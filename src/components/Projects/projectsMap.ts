@@ -50,7 +50,7 @@ export const projectsMap = [
   },
   {
     id: 8,
-    keyName: 'personal-homepage-react',
+    keyName: 'personal-homepage-react-2',
     name: 'personal homepage',
     tags: ['REACT', 'TYPESCRIPT', 'SASS', 'REACT-QUERY'],
     image: 'images/personal-homepage-2.jpg',
