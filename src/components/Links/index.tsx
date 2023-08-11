@@ -1,7 +1,24 @@
+import { motion, Variants } from 'framer-motion';
+
 import styles from './index.module.scss';
 import { SiFrontendmentor } from 'react-icons/si';
 import { BsLinkedin } from 'react-icons/bs';
 import { ImGithub } from 'react-icons/im';
+
+const linksVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -10,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: 'easeInOut',
+    },
+  },
+};
 
 const Links = () => {
   const onButtonClick = () => {
@@ -13,7 +30,7 @@ const Links = () => {
       <button onClick={onButtonClick}>marcinaugun</button>
 
       <ul className={styles.linksList}>
-        <li>
+        <motion.li variants={linksVariants}>
           <a
             href="https://github.com/marcin10lw"
             target="_blank"
@@ -21,8 +38,8 @@ const Links = () => {
           >
             <ImGithub className={styles.linksList__icon} />
           </a>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li variants={linksVariants}>
           <a
             href="https://www.frontendmentor.io/profile/marcin10lw"
             target="_blank"
@@ -30,8 +47,8 @@ const Links = () => {
           >
             <SiFrontendmentor className={styles.linksList__icon} />
           </a>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li variants={linksVariants}>
           <a
             href="https://www.linkedin.com/in/marcin-augun-951659266/"
             target="_blank"
@@ -39,7 +56,7 @@ const Links = () => {
           >
             <BsLinkedin className={styles.linksList__icon} />
           </a>
-        </li>
+        </motion.li>
       </ul>
     </div>
   );
