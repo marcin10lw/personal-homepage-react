@@ -112,8 +112,8 @@
     z-index: -1;
     height: 6px;
     background-color: $green;
-    animation: rollUnderline 800ms cubic-bezier(0, 0, 0.46, 1) forwards;
-    animation-delay: 1800ms;
+    animation: rollUnderline 650ms cubic-bezier(0, 0, 0.46, 1) forwards;
+    animation-delay: 2000ms;
 
     @include breakpoint-down(xLarge) {
       bottom: 0;

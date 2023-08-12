@@ -13,6 +13,7 @@ const headerVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.8,
+      delay: 0.2,
       ease: 'easeInOut',
       when: 'beforeChildren',
       staggerChildren: 0.2,
