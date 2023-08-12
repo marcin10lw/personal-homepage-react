@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import styles from './index.module.scss';
-import { AiOutlineQuestionCircle } from 'react-icons/ai';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import ProjectLinks from './ProjectLinks';
 
 type ProjectProps = {
@@ -77,7 +77,7 @@ const Project = ({
                     : ''
                 }`}
               >
-                <AiOutlineQuestionCircle />
+                <AiOutlineInfoCircle />
               </button>
             </div>
             <ul className={styles.project__tags}>
