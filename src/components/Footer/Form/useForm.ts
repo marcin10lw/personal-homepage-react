@@ -13,8 +13,8 @@ const useForm = () => {
   const [formData, setFormData] = useState(formDataInitialState);
   const [status, setStatus] = useState<FetchStatus>('idle');
 
-  const isEveryFieldFilled = Object.values(formData).every(
-    (value) => value.trim() !== '',
+  const isAnyFieldEmpty = Object.values(formData).some(
+    (value) => value.trim() === '',
   );
 
   const onInputChange = (
@@ -28,7 +28,7 @@ const useForm = () => {
   const onFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!isEveryFieldFilled) return;
+    if (isAnyFieldEmpty) return;
 
     setStatus('loading');
 
