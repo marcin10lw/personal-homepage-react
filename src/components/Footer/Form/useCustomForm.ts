@@ -1,21 +1,22 @@
 import { useState } from 'react';
-import { FetchStatus } from './types';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { ZodType, z } from 'zod';
+
 import { sendFormData } from './sendFormData';
+import { FetchStatus, FormData } from './types';
 
-const schema = z.object({
-  name: z.string().trim().min(1, { message: 'Name is required' }),
-  email: z.string().email(),
-  message: z.string().trim().min(1, { message: 'Message is required' }),
-});
-
-const formDataInitialState = {
+const formDataInitialState: FormData = {
   name: '',
   email: '',
   message: '',
 };
+
+const schema: ZodType<FormData> = z.object({
+  name: z.string().trim().min(1, { message: 'Name is required' }),
+  email: z.string().email(),
+  message: z.string().trim().min(1, { message: 'Message is required' }),
+});
 
 const useCustomForm = () => {
   const [status, setStatus] = useState<FetchStatus>('idle');
@@ -26,7 +27,7 @@ const useCustomForm = () => {
 
   const { errors } = formState;
 
-  const onFormSubmit = async (formValues: typeof formDataInitialState) => {
+  const onFormSubmit = async (formValues: FormData) => {
     setStatus('loading');
 
     try {
