@@ -46,24 +46,6 @@
     &:focus {
       outline: none;
     }
-
-    &:invalid:not(:placeholder-shown) {
-      border-bottom: 1px solid $red;
-
-      + .input__error {
-        &::before {
-          display: block;
-        }
-
-        &::after {
-          display: block;
-        }
-      }
-    }
-
-    &:valid {
-      border-bottom: 1px solid $green;
-    }
   }
 
   textarea {
@@ -87,25 +69,29 @@
   }
 }
 
-.input__error {
-  &::before {
-    content: ('Sorry, invalid format here');
-    display: none;
-    position: absolute;
-    right: 0;
-    top: calc(100% + 5px);
-    font-size: 12px;
-    letter-spacing: -0.17px;
-    color: $red;
+.input--error {
+  input,
+  textarea {
+    border-bottom: 1px solid $red;
   }
+}
 
-  &::after {
-    content: (url('../../../assets/images/error-icon.svg'));
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+.input__errorMessage {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 5px);
+  font-size: 12px;
+  letter-spacing: -0.17px;
+  color: $red;
+}
+
+.input__errorIcon {
+  content: (url('../../../assets/images/error-icon.svg'));
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .form__button {

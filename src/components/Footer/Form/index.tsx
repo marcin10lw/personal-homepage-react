@@ -1,54 +1,79 @@
-import styles from './index.module.scss';
-import useForm from './useForm';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { BiErrorCircle } from 'react-icons/bi';
 
+import styles from './index.module.scss';
+import useCustomForm from './useCustomForm';
+
 const Form = () => {
-  const { formData, status, onInputChange, onFormSubmit } = useForm();
+  const { errors, handleSubmit, onFormSubmit, register, status } =
+    useCustomForm();
 
   return (
-    <form onSubmit={onFormSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit(onFormSubmit)} className={styles.form}>
       <fieldset className={styles.form__fieldset}>
-        <div className={styles.input}>
+        <div
+          className={`${styles.input} ${
+            errors.name ? styles['input--error'] : ''
+          }`}
+        >
           <label htmlFor="name">name</label>
           <input
-            value={formData.name}
-            onChange={onInputChange}
+            {...register('name')}
             id="name"
             type="text"
-            name="name"
             placeholder="NAME"
-            required
           />
-          <span className={styles.input__error} />
-          <div className={styles.input__errorIcon} />
+          {errors.name && (
+            <>
+              <span className={styles.input__errorMessage}>
+                {errors.name.message}
+              </span>
+              <div className={styles.input__errorIcon} />
+            </>
+          )}
         </div>
-        <div className={styles.input}>
+
+        <div
+          className={`${styles.input} ${
+            errors.email ? styles['input--error'] : ''
+          }`}
+        >
           <label htmlFor="email">email</label>
           <input
-            value={formData.email}
-            onChange={onInputChange}
+            {...register('email')}
             id="email"
             type="email"
-            name="email"
             placeholder="EMAIL"
-            required
           />
-          <span className={styles.input__error} />
-          <div className={styles.input__errorIcon} />
+          {errors.email && (
+            <>
+              <span className={styles.input__errorMessage}>
+                {errors.email.message}
+              </span>
+              <div className={styles.input__errorIcon} />
+            </>
+          )}
         </div>
-        <div className={styles.input}>
+
+        <div
+          className={`${styles.input} ${
+            errors.message ? styles['input--error'] : ''
+          }`}
+        >
           <label htmlFor="message">email</label>
           <textarea
-            value={formData.message}
-            onChange={onInputChange}
+            {...register('message')}
             id="message"
-            name="message"
             placeholder="MESSAGE"
-            required
           />
-          <span className={styles.input__error} />
-          <div className={styles.input__errorIcon} />
+          {errors.message && (
+            <>
+              <span className={styles.input__errorMessage}>
+                {errors.message.message}
+              </span>
+              <div className={styles.input__errorIcon} />
+            </>
+          )}
         </div>
       </fieldset>
 
@@ -67,12 +92,10 @@ const Form = () => {
         )}
         {status === 'error' && (
           <>
-            <>
-              <BiErrorCircle
-                className={`${styles.info__icon} ${styles['info__icon--error']}`}
-              />
-              <p>Couldn&apos;t send message.</p>
-            </>
+            <BiErrorCircle
+              className={`${styles.info__icon} ${styles['info__icon--error']}`}
+            />
+            <p>Couldn&apos;t send message.</p>
           </>
         )}
       </div>
