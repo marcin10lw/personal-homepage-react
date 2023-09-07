@@ -37,7 +37,7 @@ export const skillsData = [
   },
   {
     id: 10,
-    title: 'Git',
+    title: 'Nodejs',
   },
   {
     id: 11,
@@ -45,6 +45,6 @@ export const skillsData = [
   },
   {
     id: 12,
-    title: 'NPM',
+    title: 'Git',
   },
 ];
