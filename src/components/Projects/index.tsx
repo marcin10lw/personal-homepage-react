@@ -27,7 +27,7 @@ const Projects = () => {
               <li>
                 <Project
                   name="TerraEye"
-                  description="This is my first commercial project. The page is written in React with TypeScript. During development I worked with experienced figma designers and programmers. It was a great opportunity to learn and self-develop."
+                  description="Page is written in React with TypeScript. During development I worked with experienced figma designers and programmers. It was a great opportunity to learn and self-develop."
                   image="images/terraeye.jpg"
                   liveUrl="https://terraeye.co/"
                   tags={['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS']}

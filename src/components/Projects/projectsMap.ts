@@ -8,24 +8,24 @@ export const projectsMap = [
   },
   {
     id: 2,
+    keyName: 'Fullstack-Todo-list-react',
+    name: 'Advanced fullstack task manager',
+    tags: ['REACT', 'FIREBASE', 'STYLED-COMPONENTS', 'REDUX'],
+    image: 'images/todo-list.jpg',
+  },
+  {
+    id: 3,
     keyName: 'rest-countries-react',
     name: 'country finder',
     tags: ['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS', 'REACT QUERY'],
     image: 'images/countries.jpg',
   },
   {
-    id: 3,
+    id: 4,
     keyName: 'movies-browser',
     name: 'movies browser',
     tags: ['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS', 'REDUX', 'REACT QUERY'],
     image: 'images/movies-browser.jpg',
-  },
-  {
-    id: 4,
-    keyName: 'Fullstack-Todo-list-react',
-    name: 'fullstack to-do list',
-    tags: ['REACT', 'FIREBASE', 'STYLED-COMPONENTS', 'REDUX'],
-    image: 'images/todo-list.jpg',
   },
   {
     id: 5,
@@ -50,30 +50,9 @@ export const projectsMap = [
   },
   {
     id: 8,
-    keyName: 'personal-homepage-react-2',
-    name: 'personal homepage',
-    tags: ['REACT', 'TYPESCRIPT', 'SASS', 'REACT-QUERY'],
-    image: 'images/personal-homepage-2.jpg',
-  },
-  {
-    id: 9,
     keyName: 'Huddle-react',
     name: 'landing page',
     tags: ['REACT', 'TYPESCRIPT', 'STYLED-COMPONENTS'],
     image: 'images/huddle.jpg',
-  },
-  {
-    id: 10,
-    keyName: 'notifications-page-react',
-    name: 'notifications page',
-    tags: ['REACT', 'STYLED-COMPONENTS'],
-    image: 'images/notifications.jpg',
-  },
-  {
-    id: 11,
-    keyName: 'tic-tac-toe',
-    name: 'tic tac toe',
-    tags: ['REACT', 'TYPESCRIPT', 'TAILWIND'],
-    image: 'images/tic-tac-toe.jpg',
   },
 ];
