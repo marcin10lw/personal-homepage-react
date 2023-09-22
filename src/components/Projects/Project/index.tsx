@@ -1,25 +1,24 @@
 import { useState } from 'react';
 
-import styles from './index.module.scss';
+import { Project as ProjectType } from '../types';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import ProjectLinks from './ProjectLinks';
+import styles from './index.module.scss';
 
 type ProjectProps = {
-  name: string | undefined;
-  description: string;
-  liveUrl: string;
-  codeUrl?: string;
-  tags: string[] | undefined;
-  image: string;
+  project: ProjectType;
 };
 
 const Project = ({
-  name,
-  codeUrl,
-  liveUrl,
-  tags,
-  description,
-  image,
+  project: {
+    name,
+    codeUrl,
+    liveUrl,
+    tags,
+    description,
+    image,
+    documentationLink,
+  },
 }: ProjectProps) => {
   const [showLinks, setShowLinks] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
@@ -38,6 +37,7 @@ const Project = ({
       codeUrl={codeUrl}
       onLinkBlur={onLinkBlur}
       onLinkFocus={onLinkFocus}
+      documentationUrl={documentationLink}
     />
   );
 

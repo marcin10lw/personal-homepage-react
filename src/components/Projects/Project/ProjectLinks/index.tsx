@@ -13,41 +13,23 @@ const ProjectLinks = ({
   onLinkBlur,
   onLinkFocus,
 }: ProjectLinksProps) => {
+  const Link = ({ href, title }: { href: string; title: string }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onFocus={onLinkFocus}
+      onBlur={onLinkBlur}
+    >
+      {title}
+    </a>
+  );
+
   return (
     <>
-      {liveUrl && (
-        <a
-          href={liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onFocus={onLinkFocus}
-          onBlur={onLinkBlur}
-        >
-          view peoject
-        </a>
-      )}
-      {codeUrl && (
-        <a
-          href={codeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onFocus={onLinkFocus}
-          onBlur={onLinkBlur}
-        >
-          view code
-        </a>
-      )}
-      {documentationUrl && (
-        <a
-          href={documentationUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onFocus={onLinkFocus}
-          onBlur={onLinkBlur}
-        >
-          view documentation
-        </a>
-      )}
+      {liveUrl && <Link href={liveUrl} title="view project" />}
+      {codeUrl && <Link href={codeUrl} title="view code" />}
+      {documentationUrl && <Link href={documentationUrl} title="view docs" />}
     </>
   );
 };
