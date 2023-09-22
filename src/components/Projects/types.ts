@@ -2,8 +2,9 @@ export type Project = {
   id: number;
   name: string;
   description: string;
-  html_url: string;
-  owner: {
-    login: string;
-  };
+  tags: string[];
+  image: string;
+  liveUrl?: string;
+  codeUrl?: string;
+  documentationLink?: string;
 };
