@@ -21,9 +21,30 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    name: 'ecommerce website',
+    name: 'fullstack jobs tracking app',
     description:
-      'The project is an e-commerce website where users can browse products, add them to the cart, and complete the checkout process. It provides a responsive layout, interactive elements, and features such as product management, cart functionality, and form validation. After checkout, users receive an order confirmation modal.',
+      'The Fullstack Jobs App addresses the business challenge of streamlining job hunting by providing user authentication, application management, status tracking, job search analytics, and a user-friendly interface.',
+    tags: [
+      'REACT',
+      'TYPESCRIPT',
+      'REACT QUERY',
+      'REACT HOOK FORM',
+      'ZOD',
+      'STYLED-COMPONENTS',
+      'NODE.JS',
+      'EXPRESS',
+      'MONGODB',
+    ],
+    image: 'images/jobs-app.jpg',
+    liveUrl: 'https://marcin10lw.github.io/fullstack-jobs-app/',
+    codeUrl: 'https://github.com/marcin10lw/fullstack-jobs-app',
+    documentationLink: 'https://jobs-api-dyvv.onrender.com/api-docs/',
+  },
+  {
+    id: 3,
+    name: 'Audio Store',
+    description:
+      'The Audio Store project addresses the business challenge of enhancing online shopping by offering a responsive layout, interactive elements, and crucial features such as product management, cart functionality, and form validation.',
     tags: [
       'REACT',
       'REACT HOOKS',
@@ -39,7 +60,7 @@ export const projects: Project[] = [
     documentationLink: undefined,
   },
   {
-    id: 3,
+    id: 4,
     name: 'Advanced fullstack task manager',
     description:
       "This project in one of numerous YouCode projects. As a challenge I decided to connect it with Firebase to create a fullstack application. I'm proud of this application as I use it myself every day.",
@@ -50,7 +71,7 @@ export const projects: Project[] = [
     documentationLink: undefined,
   },
   {
-    id: 4,
+    id: 5,
     name: 'country finder',
     description:
       'This project is part of a series of Frontend Mentor challenges. It offers a valuable opportunity to explore and gain greater insights into the details of a specific nation.',
@@ -61,7 +82,7 @@ export const projects: Project[] = [
     documentationLink: undefined,
   },
   {
-    id: 5,
+    id: 6,
     name: 'movies browser',
     description:
       'The Movies Browser is a platform that allows users to search and browse movies, popular actors and actresses, as well as their production history. The website was created by a team of three individuals as part of a group project and was completed within three weeks.',
@@ -70,16 +91,6 @@ export const projects: Project[] = [
     liveUrl: 'https://marcin10lw.github.io/movies-browser',
     codeUrl: 'https://github.com/marcin10lw/movies-browser',
     documentationLink: undefined,
-  },
-  {
-    id: 6,
-    name: 'jobs api',
-    description: 'REST API buit with Node.js/Express/MongoDB',
-    tags: ['NODE.JS', 'EXPRESS', 'JSON WEB TOKEN', 'MONGODB'],
-    image: 'images/jobs-api.jpg',
-    liveUrl: undefined,
-    codeUrl: undefined,
-    documentationLink: 'https://temp-jobs-api-09f1.onrender.com/api-docs/',
   },
   {
     id: 7,
