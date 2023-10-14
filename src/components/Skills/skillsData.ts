@@ -51,4 +51,8 @@ export const skillsData = [
     id: 13,
     title: 'Express',
   },
+  {
+    id: 14,
+    title: 'MongoDB',
+  },
 ];

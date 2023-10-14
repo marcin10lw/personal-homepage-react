@@ -84,6 +84,7 @@
 
   @include breakpoint-down(large) {
     display: flex;
+    flex-wrap: wrap;
     gap: 32px;
     margin: 20px 0 0;
   }
